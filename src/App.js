@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ChoiceButtons from "./Components/ChoiceButtons";
+import ResultMessage from "./Components/ResultMessage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const choices = [rock, paper, scissors];
+
+function App(){
+  const [playerChoice, setPlayerChoice] = useState('');
+  const [computerChoice, setComputerChoice] = useState('');
+  const [result, setResult] = useState('');
+
+  //......Rest of Code
+
+return(
+  <div>
+    <h1>Rock, Paper, Scissors</h1>
+    <ResultMessage result={result} />
+    <ChoiceButtons onChoice={handlePlayerChoice} />
+    <button onClick={handleRestart}>Restart</button>
+  </div>
+);
 }
-
 export default App;
